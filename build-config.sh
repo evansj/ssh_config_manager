@@ -45,7 +45,7 @@ find -s $CONFDIR -type f -name \*.conf -print0 | \
       else {print "# end "last_filename"\n"; last_filename=substr(FILENAME, length(confdir)+2);}} \
       FNR == 1 { print "# "substr(FILENAME, length(confdir)+2)}; \
       END{print "# end "last_filename;} \
-      {print}' > $TMPFILE 2> $ERRFILE
+      {print}' >> $TMPFILE 2> $ERRFILE
 
 # Check that the command competed, and produced some output
 # (this means that the existing config file won't be overwritten
